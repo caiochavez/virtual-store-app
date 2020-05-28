@@ -4,6 +4,7 @@ import 'package:loja_virtual/store/Cart.dart';
 import 'package:loja_virtual/store/User.dart';
 import 'package:loja_virtual/widgets/CartTile.dart';
 import 'package:loja_virtual/widgets/DiscountCart.dart';
+import 'package:loja_virtual/widgets/ShipCart.dart';
 import 'package:scoped_model/scoped_model.dart';
 
 class CartScreen extends StatelessWidget {
@@ -78,7 +79,8 @@ class CartScreen extends StatelessWidget {
                     return CartTile(product);
                   }).toList(),
                 ),
-                DiscountCart()
+                DiscountCart(),
+                ShipCart()
               ],
             );
           }
