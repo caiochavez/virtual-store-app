@@ -49,9 +49,32 @@ class CartStore extends Model {
     notifyListeners();
   }
 
-  void setCoupon (String couponCode, int discuntPercentage) {
-    this.couponCode = couponCode;
-    this.discountPercentage = discountPercentage;
+  void setCoupon (String couponCodeData, int discountPercentageData) {
+    couponCode = couponCodeData;
+    discountPercentage = discountPercentageData;
+    notifyListeners();
+  }
+
+  void updatePrices () {
+    notifyListeners();
+  }
+
+  double getProductsPrice () {
+    double price = 0.0;
+    for (CartProductModel cartProduct in products) {
+      if (cartProduct.productModel != null) {
+        price += cartProduct.productModel.price;
+      }
+    }
+    return price;
+  }
+
+  double getDiscount () {
+    return getProductsPrice() * discountPercentage / 100;
+  }
+
+  double getShipPrice () {
+    return 9.99;
   }
 
   void _loadCartItems () async {
