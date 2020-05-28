@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:loja_virtual/screens/Login.dart';
 import 'package:loja_virtual/store/Cart.dart';
 import 'package:loja_virtual/store/User.dart';
+import 'package:loja_virtual/widgets/CartPrice.dart';
 import 'package:loja_virtual/widgets/CartTile.dart';
 import 'package:loja_virtual/widgets/DiscountCart.dart';
 import 'package:loja_virtual/widgets/ShipCart.dart';
@@ -80,7 +81,8 @@ class CartScreen extends StatelessWidget {
                   }).toList(),
                 ),
                 DiscountCart(),
-                ShipCart()
+                ShipCart(),
+                CartPrice(() {})
               ],
             );
           }
