@@ -26,7 +26,7 @@ class CartProductModel {
       'productId': productId,
       'quantity': quantity,
       'size': size,
-      // 'product': productModel.toResumedMap()
+      'product': productModel.toResumedMap()
     };
   }
 
